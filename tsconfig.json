@@ -1,21 +1,32 @@
 {
-  "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["ES6"],
-    "module": "commonjs",
-    "rootDir": "./src",
-    "typeRoots": ["./node_modules/@types"],
-    "resolveJsonModule": true,
-    "outDir": "./dist",
-    "removeComments": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@controllers": ["./src/controllers/*"],
-      "@models": ["./src/models/*"],
-      "@config": ["./src/config/*"]
+    "compilerOptions": {
+        "target": "ES2017",
+        "lib": [
+            "ES6"
+        ],
+        "module": "commonjs",
+        "rootDir": "./src",
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "resolveJsonModule": true,
+        "outDir": "./dist",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "baseUrl": ".",
+        "strict": true,
+        "paths": {
+            "@controllers": [
+                "./src/controllers/*"
+            ],
+            "@models": [
+                "./src/models/*"
+            ],
+            "@config": [
+                "./src/config/*"
+            ]
+        }
     }
-  }
 }
