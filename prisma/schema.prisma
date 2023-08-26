@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  user_id     Int           @id @default(autoincrement())
+  name        String
+  email       String        @unique
+  repertoires Repertoires[]
+  updated_at  DateTime      @updatedAt
+  createdAt  DateTime   @default(now())
+}
+
+model Repertoires {
+  repertoire_id Int     @id @default(autoincrement())
+  name          String  @unique
+  Users         Users?  @relation(fields: [user_id], references: [user_id])
+  user_id       Int?
+  songs         Songs[]
+  updated_at  DateTime      @updatedAt
+  createdAt  DateTime   @default(now())
+}
+
+model Songs {
+  song_id     Int           @id @default(autoincrement())
+  name        String        @unique
+  gender      String
+  duration    String
+  artist      String
+  repertoires Repertoires[]
+  updated_at  DateTime      @updatedAt
+  createdAt  DateTime   @default(now())
+}
